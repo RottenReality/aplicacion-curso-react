@@ -1,7 +1,7 @@
-
+import {Typography} from '@mui/material';
 export const ItemListContainer = ({x}) => {
   return (
-    <h1>{x}</h1>
+    <Typography variant='h4' align='center' >{x}</Typography>
     )
 }
 

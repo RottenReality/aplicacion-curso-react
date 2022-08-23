@@ -1,8 +1,8 @@
 import React from 'react';
-import {FaCartPlus} from 'react-icons/fa';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export const CartWidget = () => {
   return (
-    <div> <FaCartPlus /> </div>
+    <div> <ShoppingCartIcon fontSize='medium'/> </div>
   )
 }
