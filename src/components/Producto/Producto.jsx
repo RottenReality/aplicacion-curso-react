@@ -1,10 +1,13 @@
 import React from 'react'
+import './producto.css'
+
 
 export const Producto = ({ item }) => {
   console.log(item);
   
+
   return (
-    <div style={{ backgroundColor: "darkred" , color: 'white', margin: '8px' }}>
+    <div className='producto-container'>
         <p>id: {item.id} </p>
         <p>nombre: {item.name} </p>
         <p>precio: ${item.price} </p>
