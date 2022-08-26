@@ -1,5 +1,5 @@
 import React from 'react'
-import './producto.css'
+import './producto.scss'
 
 
 export const Producto = ({ item }) => {
