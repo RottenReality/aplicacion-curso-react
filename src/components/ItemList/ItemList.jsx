@@ -5,7 +5,7 @@ export const ItemList = ({itemsArray}) => {
     const [listItems, setListItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const promesa = new Promise((resolve, reject) => {
+    const prom = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (itemsArray.length > 0){
                 resolve(itemsArray);
@@ -17,7 +17,7 @@ export const ItemList = ({itemsArray}) => {
 	});
 
     useEffect(() => {
-		promesa
+		prom
 			.then((res) => setListItems(res))
 			.catch((rej) => alert(rej))
 			.finally(
@@ -32,6 +32,8 @@ export const ItemList = ({itemsArray}) => {
 
   return (
     <div>
+      <p>{loading ? 'Loading...' : null}</p>
+
 			{listItems.map((item) => (
 				<Item key={item.id} pr={item} />
 			))}

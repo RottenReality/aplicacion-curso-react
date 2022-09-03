@@ -1,22 +1,9 @@
-import React,{useState} from "react";
-import { ItemCount } from "../ItemCount/ItemCount";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Item = ({ pr }) => {
 
-    const [initial, setInitial] = useState(0);
-
-    const onAdd = () => {
-		if (initial < pr.stock){
-      setInitial(initial + 1);
-      console.log("+1")
-    }
-  };
-
-  const onRemove = () => {
-		if (initial > 0){
-      setInitial(initial - 1)};
-	};
-
+	const navigation = useNavigate()
 	return (
 		<div>
 			<h3>{pr.title}</h3>
@@ -24,9 +11,8 @@ export const Item = ({ pr }) => {
             <div>{pr.description}</div>
 			<div>${pr.price}</div>
             <div>{pr.stock} available</div>
-            <button>Ver detalle del producto</button>
-            <ItemCount initial={initial} stock={pr.stock} onAdd={onAdd} onRemove={onRemove} ></ItemCount>
-		</div>
+				<button onClick={ ()=>navigation(`/detail/${pr.id}`) }> Ver detalle del producto </button>
+			</div>
         
 	);
 };

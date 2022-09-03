@@ -1,13 +1,13 @@
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import './itemCount.scss';
+import './itemCount.css';
 
 export const ItemCount = ({stock, initial, onAdd, onRemove}) => {
 
 
   return (
-    <div className='itemCountgc'>
+    <div className='itemCountGc'>
       <div className='itemCount-container'>
         <Button onClick={onRemove}>
             <RemoveIcon fontSize="small" />
