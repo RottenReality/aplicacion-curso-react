@@ -1,9 +1,11 @@
 import React, {useState,useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import { Item } from "../Item/Item";
 export const ItemList = ({itemsArray}) => {
 
     const [listItems, setListItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const{idCategoria} = useParams();
 
     const prom = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -18,7 +20,13 @@ export const ItemList = ({itemsArray}) => {
 
     useEffect(() => {
 		prom
-			.then((res) => setListItems(res))
+			.then((res) => {
+        if(idCategoria){
+          setListItems(res.filter((item)=> item.category === idCategoria))
+        }else{
+          setListItems(res)
+        }
+      })
 			.catch((rej) => alert(rej))
 			.finally(
 				setTimeout(() => {
@@ -26,17 +34,17 @@ export const ItemList = ({itemsArray}) => {
 				}, 3000)
 			);
 
-	}, []);
+	}, [idCategoria]);
     
 
 
   return (
     <div>
-      <p>{loading ? 'Loading...' : null}</p>
-
-			{listItems.map((item) => (
+      {loading ? <p>Loading...</p> : listItems.map((item) => (
 				<Item key={item.id} pr={item} />
 			))}
+
+			
 	</div>
   )
 }

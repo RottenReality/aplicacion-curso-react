@@ -23,11 +23,10 @@ const NavBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <NightsStayTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <NavLink to='/' className='links'>
           <Typography
             variant="h6"
-            noWrap
-            component="a"
-            href="/"  
+            noWrap 
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -40,6 +39,7 @@ const NavBar = () => {
           >
             KALON
           </Typography>
+          </NavLink>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -103,7 +103,7 @@ const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <NavLink to={`/categoria/${page}`}> {page} </NavLink>
+                <NavLink to={`/categoria/${page}`} className='links'> {page} </NavLink>
               </Button>
             ))}
           </Box>
