@@ -18,6 +18,7 @@ function App() {
         }>
         </Route>
         <Route path='/detail/:id' element = {<ItemDetailContainer />} ></Route>
+        <Route path='/categoria/:idCategoria' element = {<ItemDetailContainer />}></Route>
       </Routes>
     </Router>
   );

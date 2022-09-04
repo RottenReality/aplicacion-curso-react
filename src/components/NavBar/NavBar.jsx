@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import AdbIcon from '@mui/icons-material/Adb';
 import { CartWidget } from '../CartWidget/CartWidget';
+import NightsStayTwoToneIcon from '@mui/icons-material/NightsStayTwoTone';
+import { NavLink } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['jackets', 'shirts', 'pants'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -21,12 +22,12 @@ const NavBar = () => {
     <AppBar style={{backgroundColor:'darkred'}} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <NightsStayTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/"  
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -37,7 +38,7 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            KALON
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -76,7 +77,7 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <NightsStayTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -102,7 +103,7 @@ const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <NavLink to={`/categoria/${page}`}> {page} </NavLink>
               </Button>
             ))}
           </Box>
