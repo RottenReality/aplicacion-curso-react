@@ -11,7 +11,7 @@ export const Item = ({ pr }) => {
             <div>{pr.description}</div>
 			<div>${pr.price}</div>
             <div>{pr.stock} available</div>
-				<button onClick={ ()=>navigation(`/detail/${pr.id}`) }> Ver detalle del producto </button>
+				<button onClick={ ()=>navigation(`/item/${pr.id}`) }> Ver detalle del producto </button>
 			</div>
         
 	);

@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import { arrayItems } from '../../Mocks/ProductList'
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
+import { Loader } from '../Loader/Loader';
 
 
 export const ItemDetailContainer = () => {
@@ -39,7 +40,7 @@ export const ItemDetailContainer = () => {
   return (
     <div> 
       
-      { loading ? <p>Loading... </p>: <ItemDetail detail = {prDetail} />}
+      { loading ? <Loader loading={loading}></Loader>: <ItemDetail detail = {prDetail} />}
         
     </div>
   )
