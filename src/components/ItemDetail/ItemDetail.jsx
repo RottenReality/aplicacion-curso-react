@@ -1,20 +1,16 @@
 import React,{useState} from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { useNavigate } from "react-router-dom";
 export const ItemDetail = ({detail}) => {
 
-    const [initial, setInitial] = useState(0);
+    const [count, setCount] = useState(0);
+    const [compra, setCompra] = useState(false);
+    const navigation = useNavigate();
 
     const onAdd = () => {
-		if (initial < detail.stock){
-      setInitial(initial + 1);
-      console.log("+1")
+     setCompra(true); 
     }
-  };
 
-  const onRemove = () => {
-		if (initial > 0){
-      setInitial(initial - 1)};
-	};
 
   return (
     <div>
@@ -23,7 +19,10 @@ export const ItemDetail = ({detail}) => {
         <p> {detail.description} </p>
         <p> Precio: {detail.price} </p>
         <p> Disponible: {detail.stock} </p>
-        <ItemCount initial={initial} stock={detail.stock} onAdd={onAdd} onRemove={onRemove} ></ItemCount>
+        {!compra ? 
+          <ItemCount stock={detail.stock} initial={0} onAdd={onAdd} count = {count}  setCount = {setCount}></ItemCount> :  
+          <button onClick={()=>navigation('/cart') }> Ir al carrito</button> }
+        
     </div>
   )
-}
+};
