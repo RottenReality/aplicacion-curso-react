@@ -35,4 +35,5 @@ export const arrayItems = [
       stock: 10,
       pictureUrl: "https://cdn-images.kooding.com/productDetailImage/227591-2/67184f90323d77670781936d6fd4befb97e74749.jpg"
     },
+    
   ];
