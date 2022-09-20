@@ -109,7 +109,9 @@ const NavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget />
+            <NavLink to='/cart' className='links'>
+              <CartWidget />
+            </NavLink>
           </Box>
         </Toolbar>
       </Container>
