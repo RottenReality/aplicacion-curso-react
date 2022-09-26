@@ -22,7 +22,6 @@ export const Checkout = () => {
         try{
             const col = collection(db, "orders")
             const order = await addDoc(col, data)
-            console.log('orderInfo:', order)
             setOrderId(order.id)
             clear()
         } catch(error) {
@@ -35,16 +34,14 @@ export const Checkout = () => {
             ...buyer,
             [e.target.name]: e.target.value
         }))
-        console.log(name)
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         const items = cart.map(e => {return {id:e.id, title:e.title, price:e.price, quantity: e.quantity}})
-        const dia = new Date()
+        const date = new Date()
         const total = cartTotal()
-        const data = {buyer, items, dia, total}
-        console.log('data', data)
+        const data = {buyer, items, date, total}
         generateOrder(data)
     }
 
