@@ -13,18 +13,6 @@ export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
   const{id} = useParams();
 
-  /* const prom = new Promise((resolve, reject) => {
-    
-    let condition = true
-    setTimeout(()=> {
-      if(condition){
-        resolve(arrayItems)
-      }else{
-        reject('Error de detalle de producto')
-      }
-
-    },2000)
-  } */
 
 
   useEffect(()=>{
@@ -42,20 +30,6 @@ export const ItemDetailContainer = () => {
 
   }, [])
 
-
-
-/*   useEffect(() => {
-		prom
-			.then((res) => setPrDetail(res.find((item)=> item.id == id)))
-			.catch((rej) => alert(rej))
-			.finally(
-				setTimeout(() => {
-					setLoading(false);
-				}, 3000)
-			);
-
-	}, []);
-     */
 
   return (
     <div> 

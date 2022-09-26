@@ -22,7 +22,7 @@ export const Cart = () => {
             {cart.map((pedido)=> <CartItem key={pedido.id} pedido={pedido}/>)}
             <span>Total de compra: ${cartTotal()}</span>
             <button onClick={clear}>Vaciar carrito</button>
-            <button>Finalizar Compra</button>
+            <button onClick={()=>navigation('/checkout')} >Finalizar Compra</button>
           </div>
       }
     </div>

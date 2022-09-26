@@ -10,17 +10,6 @@ export const ItemList = ({itemsArray}) => {
     const [loading, setLoading] = useState(true);
     const categoryId = useParams().categoryId;
 
-/*     const prom = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (itemsArray.length > 0){
-                resolve(itemsArray);
-            }
-            else{
-                reject("Error de productos");
-            }
-        }, 2000);
-	}); */
-
   
 
 //firebase
@@ -40,27 +29,7 @@ export const ItemList = ({itemsArray}) => {
     .finally(()=>setLoading(false))
   }, [categoryId])
 
-
-  //mock  
-/*   useEffect(() => {
-		prom
-			.then((res) => {
-        if(categoryId){
-          setListItems(res.filter((item)=> item.category === categoryId))
-        }else{
-          setListItems(res)
-        }
-      })
-			.catch((rej) => alert(rej))
-			.finally(
-				setTimeout(() => {
-					setLoading(false);
-				}, 3000)
-			);
-
-	}, [categoryId]); */
-    
-
+  
 
   return (
     <div>
