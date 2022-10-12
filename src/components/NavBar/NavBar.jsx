@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { CartWidget } from '../CartWidget/CartWidget';
 import NightsStayTwoToneIcon from '@mui/icons-material/NightsStayTwoTone';
 import { NavLink } from 'react-router-dom';
+import './NavBar.css'
 
 const pages = ['jackets', 'shirts', 'pants'];
 
@@ -19,11 +20,17 @@ const NavBar = () => {
 
 
   return (
-    <AppBar style={{backgroundColor:'darkred'}} position="static">
+    <AppBar position="static" sx={{
+      backgroundColor: '#121212',
+      height: '7rem',
+      border: '0',
+      borderBottom: '1px',
+      borderStyle: 'solid',
+      borderColor: 'darkgray'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <NightsStayTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <NavLink to='/' className='links'>
+          <NightsStayTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, fontSize: '3rem', mr: 1, color: 'gold' }} />
+          <NavLink to='/' className='linkHome'>
           <Typography
             variant="h6"
             noWrap 
@@ -32,8 +39,9 @@ const NavBar = () => {
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
+              fontSize: '3rem',
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'gold',
               textDecoration: 'none',
             }}
           >
@@ -48,7 +56,7 @@ const NavBar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{ color: 'gold'}}
             >
               <MenuIcon />
             </IconButton>
@@ -67,8 +75,9 @@ const NavBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none' }
               }}
+              
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -77,7 +86,7 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          <NightsStayTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <NightsStayTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: 'gold' }} />
           <Typography
             variant="h5"
             noWrap
@@ -90,26 +99,26 @@ const NavBar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
               textDecoration: 'none',
+              color: 'gold'
             }}
           >
-            LOGO
+            KALON
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block'}}
               >
-                <NavLink to={`/categoria/${page}`} className='links'> {page} </NavLink>
+                <NavLink to={`/categoria/${page}`} className='linksNavbar'> {page} </NavLink>
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <NavLink to='/cart' className='links'>
+            <NavLink to='/cart' className='linksNavbar'>
               <CartWidget />
             </NavLink>
           </Box>

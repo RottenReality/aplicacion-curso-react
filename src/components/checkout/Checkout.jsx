@@ -4,6 +4,7 @@ import { useContext,  useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import {db} from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom'
+import './Checkout.css'
 export const Checkout = () => {
 
     const {cart, cartTotal, clear} = useContext(CartContext)
@@ -50,13 +51,15 @@ export const Checkout = () => {
         <h1>Order data</h1>
         {!orderId ? 
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className='formContainer' onSubmit={handleSubmit}>
                 <input type="text" name='name' placeholder='Name' value={name} onChange={handleInputChange} />
                 <input type="text" name='email' placeholder='Email' value={email} onChange={handleInputChange} />
                 <input type="text" name='phone' placeholder='Phone' value={phone} onChange={handleInputChange} />
-                <input type="submit" value='Buy' />
             </form>
-            <button onClick={()=>navigation('/checkout')} >Go back</button>
+            <div className='containerButtonsCheckout'>
+                <input className='buttonBuy' type="submit" value='Buy' />
+                <button onClick={()=>navigation('/cart')} >Go back</button>
+            </div>
         </div> : 
             <div>
                 <h3>Your order id is: {orderId} </h3>

@@ -1,0 +1,44 @@
+.containerEmptyCart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerEmptyCart h3{
+    font-size: 4rem;
+}
+
+.containerEmptyCart h2{
+    font-size: 3rem;
+    color: white;
+}
+
+span{
+    color: white;
+}
+
+.price{
+    padding: 5rem;
+    font-size: 1.5rem;
+}
+
+.cartButtons{
+    display: flex;
+    justify-content: center;
+}
+
+.containerCart{
+    display:flex;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.cartFinalContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-top: 0.2rem;
+    border-style: solid;
+}

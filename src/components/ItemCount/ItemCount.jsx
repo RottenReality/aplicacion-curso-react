@@ -1,6 +1,6 @@
-import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { Button } from '@mui/material';
 import './itemCount.css';
 
 export const ItemCount = ({stock, initial, onAdd, count, setCount}) => {
@@ -23,14 +23,16 @@ export const ItemCount = ({stock, initial, onAdd, count, setCount}) => {
         <Button onClick={res}>
             <RemoveIcon fontSize="small" />
         </Button>
-        <p>{count}</p>
+        <div>
+          <p className='countNumber'>{count}</p>
+        </div>
         <Button onClick={sum}>
             <AddIcon fontSize="small" />
         </Button>
       </div>
-      <Button onClick={onAdd}>
+      <button onClick={onAdd}>
         Agregar al carrito
-      </Button>
+      </button>
     </div>
   )
 }

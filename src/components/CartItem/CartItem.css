@@ -1,0 +1,14 @@
+.itemCartContainer{
+    border: 0.2rem;
+    border-style: solid;
+    border-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.itemCartContainer img{
+    height: auto;
+    max-width: 100px
+}

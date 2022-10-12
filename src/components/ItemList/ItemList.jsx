@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/firebase';
 import { Item } from "../Item/Item";
 import { Loader } from '../Loader/Loader';
+import { Grid } from '@mui/material';
 export const ItemList = ({itemsArray}) => {
 
     const [listItems, setListItems] = useState([]);
@@ -32,12 +33,10 @@ export const ItemList = ({itemsArray}) => {
   
 
   return (
-    <div>
+    <Grid container className='itemListGrid'>
       {loading ? <Loader loading={loading}></Loader> : listItems.map((item) => (
 				<Item key={item.id} pr={item} />
 			))}
-
-			
-	</div>
+	  </Grid>
   )
 }

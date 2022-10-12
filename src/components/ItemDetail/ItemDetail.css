@@ -1,0 +1,16 @@
+h2{
+    color: white;
+    font-size: 2rem;
+    font-style: italic
+}
+
+p{
+    color: white;
+    padding: 1.5rem;
+}
+
+.imgDetail{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}

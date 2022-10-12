@@ -1,6 +1,12 @@
-button {
+.formContainer{
+    display: flex;
+    flex-wrap: column wrap;
+    justify-content: center;
+    padding: 2rem;
+}
 
-    
+.buttonBuy {
+
     display: inline-block;
     outline: 0;
     cursor: pointer;
@@ -19,7 +25,19 @@ button {
         
 }
 
-button:hover{
+.buttonBuy:hover{
     color: #000;
     background-color: gold;
+}
+
+.containerButtonsCheckout{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
 }
