@@ -1,6 +1,6 @@
 # KALON
 
-Kalon is a personal E-Comercer that im doing to train my skills in react and js, in a future I would love to deploy and have a real use to this web site.
+Kalon is a personal E-Comercer that im doing to train my skills in react and js.
 
 ![kalon-ecommerce](https://user-images.githubusercontent.com/88494722/196859035-7e683f24-98d4-4669-ae41-d4e425722f19.gif)
 
